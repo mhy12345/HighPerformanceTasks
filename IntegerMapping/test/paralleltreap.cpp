@@ -155,9 +155,10 @@ inline void writeInt(register int x)
 
 int main()
 {
-		freopen("input.txt","r",stdin);
-		freopen("output.txt","w",stdout);
+		//freopen("input.txt","r",stdin);
+		//freopen("output.txt","w",stdout);
 		int n,m;
+		//n=10000000;
 		readInt(n);
 		//scanf("%d",&n);
 		while (n--)
@@ -165,19 +166,24 @@ int main()
 				//if (rand()%100000==0)cerr<<topt<<endl;
 				int opt;
 				int x,y;
+				opt=myrand()%2+1;
 				readInt(opt);
 				if (opt==1)
 				{
+					//	x=myrand()*myrand();
+					//	y=myrand()*myrand();
 						readInt(x);
 						readInt(y);
 						//Insert(troot[x&((1u<<dlen)-1)],x>>dlen,y);
 						Insert2(&troot[x&((1u<<dlen)-1)],x>>dlen,y);
 				}else
 				{
+						//x=myrand()*myrand();
 						readInt(x);
 						//printf("%d\n",Find(troot[x&((1u<<dlen)-1)],x>>dlen));
 						//writeInt(Find(troot[x&((1u<<dlen)-1)],x>>dlen));
 						writeInt(Find2(troot[x&((1u<<dlen)-1)],x>>dlen));
+						//Find2(troot[x&((1u<<dlen)-1)],x>>dlen);
 				}
 		}
 }
